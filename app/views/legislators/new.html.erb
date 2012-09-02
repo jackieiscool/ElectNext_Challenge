@@ -40,3 +40,10 @@
 		<%= text_field_tag :legislator_lastname, data: {autocomplete_source: legislator_object_path }, :class => "legislator_picker" %>
 		<%= submit_tag :pick_legislator %>
 		<% end %>
+		
+		<p>
+			<%= form_tag legislators_path do %>
+				<%= text_field_tag :legislator_lastname, data: { autocomplete_source: legislator_object_path }, :class => "legislator_picker" %>
+				<%= submit_tag :pick_legislator %>
+			<% end %>
+		</p>

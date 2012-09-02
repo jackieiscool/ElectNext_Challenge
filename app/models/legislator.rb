@@ -3,12 +3,20 @@ class Legislator < ActiveRecord::Base
   has_many :contributions
   # accepts_nested_attributes_for :contributions
   
-  def legislator_lastname
-    legislator.lastname if legislator
+  def self.search(search)
+    if search
+      find(:all, :conditions => ['lastname LIKE ?', "%#{search}%"])
+    # else
+    #   find(:all)
+    end
   end
   
-  def legislator_lastname=(lastname)
-    self.legislator = Legislator.find_by_lastname(lastname) unless lastname.blank?
-  end
+  # def legislator_lastname
+  #   legislator.lastname if legislator
+  # end
+  # 
+  # def legislator_lastname=(lastname)
+  #   self.legislator = Legislator.find_by_lastname(lastname) unless lastname.blank?
+  # end
 end
 
