@@ -4,18 +4,37 @@ require 'json'
 
 # http://transparencydata.com/api/1.0/contributions.json?apikey=9d100a5aec4c4e7682548b5b436a57f9&contributor_state=md|va&recipient_ft=mikulski&cycle=2008
 
-def get_info
-  url_string =     "http://transparencydata.com/api/1.0/contributions.json?apikey=9d100a5aec4c4e7682548b5b436a57f9&contributor_state=md|mn&recipient_ft=bachmann&cycle=2008"
-      url = URI.escape(url_string)
-      req = Net::HTTP::Get.new(url_string)
-      res = Net::HTTP.start(url_string) {|http|
-        http.request(req)
-      }
-      # a = res.body
-      # b = JSON.parse
-end
+# def get_info
+  url_string =     "http://transparencydata.com/api/1.0/contributions.json?apikey=9d100a5aec4c4e7682548b5b436a57f9&contributor_state=md|mn&recipient_ft=ellison&cycle=2008"
+     url = URI.parse(URI.escape(url_string))
+     puts url
+     req = Net::HTTP::Get.new(url_string)
+     puts req
+     res = Net::HTTP.start(url.host, url.port) {|http|
+       http.request(req)
+     }
+     puts res
+     a = res.body
+     b = JSON.parse(a[:amount])
+     puts b 
+    
+     
+     # puts b[:contributor_name]
+     #    b = JSON.parse
+     #    
+     #    puts b
 
-get_info
+# uri = URI.parse(URI.escape(url_string))
+
+# Net::HTTP.start(uri.host, uri.port) do |http|
+#   request = Net::HTTP::Get.new uri.request_uri
+#   #response = http.request request # Net::HTTPResponse object
+#   puts http.request request
+# end
+
+
+
+
 
 # require 'addressable/uri'
 # 
