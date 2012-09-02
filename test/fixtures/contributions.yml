@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  legislator_id: 1
+  amount: 1
+  contributor_name: MyString
+  contributor_state: MyString
+
+two:
+  legislator_id: 1
+  amount: 1
+  contributor_name: MyString
+  contributor_state: MyString

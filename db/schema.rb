@@ -11,7 +11,16 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120901221458) do
+ActiveRecord::Schema.define(:version => 20120902172730) do
+
+  create_table "contributions", :force => true do |t|
+    t.integer  "legislator_id"
+    t.integer  "amount"
+    t.string   "contributor_name"
+    t.string   "contributor_state"
+    t.datetime "created_at",        :null => false
+    t.datetime "updated_at",        :null => false
+  end
 
   create_table "legislators", :force => true do |t|
     t.string   "firstname"
