@@ -3,6 +3,6 @@
 <%= form_tag(legislator_path(1), :method => 'get') do %>
   <p>
     <%= text_field_tag :lastname, params[:lastname] %>
-    <%= submit_tag "Search", :lastname => nil %>
+    <%= submit_tag "Find Legislator", :lastname => nil %>
   </p>
 <% end %>
