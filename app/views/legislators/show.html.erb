@@ -1,11 +1,6 @@
-<h1>Legislator Show Page</h1>
+<h1><%=@legislator.firstname%> <%= @legislator.lastname %></h1>
 
-<table>
-	<th>Legislator Stats</th>
-	<tr>
-		<td>Name</td>
-		<td><%= @legislator.firstname %> <%= @legislator.lastname %></td>
-	</tr>
+<table class="table">
 	<tr>
 		<td>Party</td>
 		<td><%= @legislator.party%></td>
@@ -16,7 +11,7 @@
 	</tr>
 </table>
 
-<table>
+<table class="table">
 	<th>In State Contributions</th>
 	<tr>
 		<td>Number of Contributions</td>
@@ -28,7 +23,7 @@
 	</tr>
 </table>
 
-<table>
+<table class="table">
 	<th>Out of State Contributions</th>
 	<tr>
 		<td>Number of Contributions</td>
