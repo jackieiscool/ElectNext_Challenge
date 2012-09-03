@@ -1,1 +1,41 @@
 <h1>Legislator Show Page</h1>
+
+<table>
+	<th>Legislator Stats</th>
+	<tr>
+		<td>Name</td>
+		<td><%= @legislator.firstname %> <%= @legislator.lastname %></td>
+	</tr>
+	<tr>
+		<td>Party</td>
+		<td><%= @legislator.party%></td>
+	</tr>
+	<tr>
+		<td>State</td>
+		<td><%= @legislator.state %></td>
+	</tr>
+</table>
+
+<table>
+	<th>In State Contributions</th>
+	<tr>
+		<td>Number of Contributions</td>
+		<td><%= in_state_count %></td>
+	</tr>
+	<tr>
+		<td>Total Amount of Contribution</td>
+		<td><%= in_state_amount %></td>
+	</tr>
+</table>
+
+<table>
+	<th>Out of State Contributions</th>
+	<tr>
+		<td>Number of Contributions</td>
+		<td><%= out_state_count %></td>
+	</tr>
+	<tr>
+		<td>Total Amount of Contribution</td>
+		<td><%= out_state_amount %></td>
+	</tr>
+</table>

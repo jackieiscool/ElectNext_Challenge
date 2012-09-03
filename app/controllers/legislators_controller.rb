@@ -1,12 +1,15 @@
 class LegislatorsController < ApplicationController
   # include Kernel
   def index
-    @legislators = Legislator.search(params[:search])
+    # @legislator = Legislator.search(params[:search])
+    @legislator = Legislator.find_by_lastname(params[:lastname])
     # @legislators = Legislator.find(:all, :conditions => ['lastname LIKE ?', "%#{params[:search]}%"])
   end
   
   def show
-    @legislator = Legislator.find(1)
+    @legislator = Legislator.find_by_lastname(params[:lastname])
+    # @contribution = 
+    # @legislator = Legislator.find_by_lastname("Ellison")
   end
 
   def new
